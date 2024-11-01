@@ -1,79 +1,70 @@
-{{-- resources/views/errors/404.blade.php --}}
+<!-- resources/views/errors/404.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>Page Ora Nemu</title>
+
+    <!-- Tambahkan Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tambahkan Google Fonts untuk font menarik -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            background-color: #f8fafc;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
+            font-family: 'Poppins', sans-serif; /* Mengganti font ke Poppins */
+            background-color: #f8f9fa;
+            color: #343a40;
             height: 100vh;
             margin: 0;
+        }
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100%;
             text-align: center;
         }
-
-        .content {
-            max-width: 600px;
-        }
-
-        .code {
-            font-size: 100px;
-            color: #ff4c4c; /* Warna merah */
-            font-weight: 700;
-        }
-
-        .message {
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .error-message {
+        p {
             font-size: 20px;
-            background-color: #ff4c4c;
+            margin-bottom: 20px;
+        }
+        h6 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        a {
+            text-decoration: none;
             color: #fff;
+        }
+        .btn-custom {
+            background-color: #007bff;
             padding: 10px 20px;
             border-radius: 5px;
-            display: inline-block;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
         }
-
-        .error-message:hover {
-            background-color: #e60000;
-        }
-
-        .back-button {
-            margin-top: 30px;
-            padding: 10px 25px;
-            background-color: #636b6f;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .back-button:hover {
-            background-color: #4e555b;
-        }
+        
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="code">404</div>
-        <div class="message">Page Not Found</div>
-        <div class="error-message">Error bro, mending balik ke halaman sebelumnya.</div>
-        <a href="javascript:history.back()" class="back-button">Go Back</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Ganti 404 dengan gambar yang telah diatur ukurannya -->
+                <img src="{{ asset('modern/src/assets/images/backgrounds/searching1.png') }}" alt="Page Not Found" class="img-fluid">
+                <p>Waduh, tujuanmu nggak ada.</p>
+                <h6>Kayaknya kamu salah  Jurusan, Ayo balik sebelum nyesel!</h6>
+                <!-- Button -->
+                <a href="{{ url('/tasks') }}" class="btn btn-primary">Kembali</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Tambahkan Bootstrap JS dan dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

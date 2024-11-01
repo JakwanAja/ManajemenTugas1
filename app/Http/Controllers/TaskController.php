@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     // Menampilkan semua task
-    public function index()
+    public function index(Request $request)
     {
-        $tasks = Task::all();
-        return view('tasks.index', compact('tasks'));
+        
+        $selectedStatus = $request->input('status', 'all');
+
+        $tasks = Task::when($selectedStatus != 'all', function ($query) use ($selectedStatus) {
+            return $query->where('status', $selectedStatus);
+        })->get();
+
+        return view('tasks.index', compact('tasks', 'selectedStatus'));
     }
 
     // Menampilkan form untuk membuat task baru
@@ -73,4 +79,10 @@ class TaskController extends Controller
         $task->delete();
         return redirect()->route('tasks.index')->with('success', 'Task berhasil dihapus.');
     }
+    public function __construct()
+    {
+    $this->middleware('auth');
+    }
+
 }
+
