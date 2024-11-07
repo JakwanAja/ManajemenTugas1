@@ -3,23 +3,54 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\Category; // Pastikan untuk mengimpor model Category
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
     // Menampilkan semua task
     public function index(Request $request)
     {
-        
+        // Ambil status dan kategori yang dipilih dari query string
         $selectedStatus = $request->input('status', 'all');
+        $selectedCategory = $request->input('category_id', 'all');
 
-        $tasks = Task::when($selectedStatus != 'all', function ($query) use ($selectedStatus) {
-            return $query->where('status', $selectedStatus);
-        })->get();
+        // Ambil semua kategori dari database
+        $categories = Category::all();
 
-        return view('tasks.index', compact('tasks', 'selectedStatus'));
+        // Buat query untuk mengambil tasks
+        $query = Task::with('category'); // Pastikan untuk memuat relasi kategori
+
+        // Filter berdasarkan status jika bukan 'all'
+        if ($selectedStatus !== 'all') {
+            $query->where('status', $selectedStatus);
+        }
+
+        // Filter berdasarkan kategori jika bukan 'all'
+        if ($selectedCategory !== 'all') {
+            $query->where('category_id', $selectedCategory);
+        }
+
+        // Gunakan paginate untuk mengambil 10 data per halaman
+        $tasks = $query->paginate(10);
+
+        // Kembalikan view dengan data yang diperlukan
+        return view('tasks.index', compact('tasks', 'categories', 'selectedStatus', 'selectedCategory'));
     }
 
+    public function taskCounts()
+    {
+        $taskCounts = DB::table('tasks')
+                        ->rightJoin('categories', 'tasks.category_id', '=', 'categories.id')
+                        ->select('categories.name', DB::raw('COUNT(tasks.id) as task_count'))
+                        ->groupBy('categories.name')
+                        ->get();
+
+        return view('tasks.counts', compact('taskCounts')); // Mengirim data ke view
+    }
+    
+    
     // Menampilkan form untuk membuat task baru
     public function create()
     {

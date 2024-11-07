@@ -47,10 +47,18 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                                        <hr>
+                                        <a href="{{ route('auth.google') }}" class="btn btn-google btn-user btn-block">
+                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                        </a>
                                     </form>
+                                    
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="{{ route('register') }}">Create an Account!</a>
+                                        <a class="small" href="/asada">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="{{ route('register') }}">Belum unya akun? Buat akun baru!</a>
                                     </div>
                                 </div>
                             </div>

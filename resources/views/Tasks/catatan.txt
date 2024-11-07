@@ -1,0 +1,18 @@
+Model di Eloquent mewakili tabel di database dan menyediakan 
+fungsi CRUD untuk mengelola data. Dalam Eloquent, kita tidak perlu 
+menentukan tabel secara eksplisit jika menggunakan konvensi penamaan Laravel:
+
+-> Nama model dalam bentuk singular (tunggal), 
+sementara tabel menggunakan bentuk plural (jamak). Misalnya,
+model Category secara otomatis akan mengacu ke tabel categories.
+
+Eloquent juga mendukung relasi antar-tabel (seperti One-to-Many dan Many-to-Many) 
+yang memudahkan pengambilan data dari berbagai tabel yang terhubung.
+
+
+
+
+Seeding adalah proses mengisi database dengan data awal atau data dummy untuk kebutuhan
+testing atau pengembangan. Ini memudahkan kita untuk menguji aplikasi 
+tanpa harus memasukkan data secara manual.
+pada modul ini kita membuat data dummy untuk tabel Task dan Category.

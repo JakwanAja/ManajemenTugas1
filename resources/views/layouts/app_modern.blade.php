@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/modern/src/assets/css/styles.min.css" />
   <!-- SweetAlert CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-
+  
 </head>
 
 <body>
@@ -44,8 +44,8 @@
                 <span class="hide-menu">Beranda</span>
               </a>
             </li>
-            <li class="sidebar-item {{ request()->is('/tasks') ? 'active' : '' }}">
-              <a class="sidebar-link" href="/tasks" aria-expanded="false">
+            <li class="sidebar-item" >
+              <a class="sidebar-link {{ request()->is('tasks') ? 'active' : '' }}" href="/tasks" aria-expanded="false">
                 <span>
                   <i class="ti ti-user"></i>
                 </span>

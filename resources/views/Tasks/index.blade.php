@@ -15,7 +15,16 @@
 
                             <div class="mb-3">
                                 <form action="{{ route('tasks.index') }}" method="GET" class="d-inline">
-                                    <label for="statusFilter" class="form-label">Kategori:</label>
+                                    <label for="categoryFilter" class="form-label">Kategori:</label>
+                                    <select name="category_id" id="categoryFilter" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                        <option value="all" {{ $selectedCategory == 'all' ? 'selected' : '' }}>Semua</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->id }}" {{ $selectedCategory == $category->id ? 'selected' : '' }}>
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <label for="statusFilter" class="form-label">Status:</label>
                                     <select name="status" id="statusFilter" class="form-select w-auto d-inline" onchange="this.form.submit()">
                                         <option value="all" {{ $selectedStatus == 'all' ? 'selected' : '' }}>Semua</option>
                                         <option value="pending" {{ $selectedStatus == 'pending' ? 'selected' : '' }}>Pending</option>
@@ -39,6 +48,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Judul</th>
+                                        <th>Kategori</th>
                                         <th>Status</th>
                                         <th>Jatuh Tempo</th>
                                         <th>Aksi</th>
@@ -49,12 +59,14 @@
                                         <tr>
                                             <td>{{ $task->id }}</td>
                                             <td>{{ $task->title }}</td>
+                                            <td>{{ $task->category->name ?? 'N/A' }}</td>
                                             <td>
                                                 <span class="badge bg-{{ $task->status == 'completed' ? 'success' : ($task->status == 'in_progress' ? 'warning' : 'secondary') }}">
                                                     {{ ucfirst($task->status) }}
                                                 </span>
                                             </td>
                                             <td>{{ $task->due_date }}</td>
+                                            
                                             <td class="text-center">
                                                 <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-info btn-sm">
                                                     <i class="bi bi-eye"></i> Detail
@@ -74,7 +86,9 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
+                            <div class="d-flex justify-content-center mt-4">
+                                {{ $tasks->links() }} <!-- Menampilkan navigasi paginasi -->
+                            </div>
                             <div class="d-flex justify-content-end mt-3">
                                 <a href="#" class="btn btn-secondary"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
                             </div>
