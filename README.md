@@ -56,7 +56,10 @@ GOOGLE_CALLBACK="http://127.0.0.1:8000/auth/callback"
 Project ini menggunakan laravel versi 10 jadi pastikan PHP yang terinstal di device adalah php versi 8.1 atau lebih baru. Jika kalian sebelumnya menggunakan PHP versi 8.0 lebih randah, silahkan update composer dan jika belum bisa silahkan update laravel device versi PHP 8.1 https://www.php.net/downloads
 
 ## Screenshot
+## License
+MIT
 
+**Free Software, Hell Yeah!**
 
 
 
