@@ -7,8 +7,6 @@ Login default :
 - Password : 12345678
   
 ## Instalasi 
-Project ini menggunakan laravel versi 10 jadi pastikan PHP yang terinstal di device adalah php versi 8.1 atau lebih baru. Jika kalian sebelumnya menggunakan PHP versi 8.0 lebih randah, silahkan update composer dan jika belum bisa silahkan update laravel device versi PHP 8.1 https://www.php.net/downloads
-
 ### Kebutuhan
 - PHP 8.1 atau diatasnya
 - MySQL (bisa menggunakan XAMPP atau Laragon)
@@ -17,13 +15,24 @@ Project ini menggunakan laravel versi 10 jadi pastikan PHP yang terinstal di dev
 
 Cara Menjalankan 
 1. Clone projek ini dengan git bash git clone (-)
-2. Konfigurasi nama database di .env sesuai database yang ada (disini saya menggunakan database "task")
+2. Konfigurasi nama database di .env sesuai database yang ada (disini saya menggunakan database ```task```)
 3. Jalankan Migrasi dan seed
-```sh
-127.0.0.1:8000
-```
 ```sh
 php artisan migrate:fresh --seed
 ```
-5. 
+4. Generate key
+```sh
+php artisan key:generate
+```
+5. Jika ingin mengaktifkan fitur "Login with Google" Tambahkan script di bagian bawah file .env
+```sh
+GOOGLE_CLIENT_ID="xxx"
+GOOGLE_CLIENT_SECRET="xxx"
+GOOGLE_CALLBACK="http://127.0.0.1:8000/auth/callback"
+```
+## Informasi Tambahan 
+Project ini menggunakan laravel versi 10 jadi pastikan PHP yang terinstal di device adalah php versi 8.1 atau lebih baru. Jika kalian sebelumnya menggunakan PHP versi 8.0 lebih randah, silahkan update composer dan jika belum bisa silahkan update laravel device versi PHP 8.1 https://www.php.net/downloads
+
+
+
 
