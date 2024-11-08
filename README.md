@@ -5,6 +5,7 @@ Aplikasi ini merupakan aplikasi Manajemen Tugas (Task Manager) berbasis web yang
 Login default : 
 - Email : admin1@gmail.com
 - Password : 12345678
+
   
 ## Instalasi 
 Kebutuhan
@@ -24,17 +25,32 @@ php artisan migrate:fresh --seed
 ```sh
 php artisan key:generate
 ```
-5. Jika ingin mengaktifkan fitur "Login with Google" Tambahkan script di bagian bawah file .env
+5. Jalankan aplikasi
+```sh
+php artisan serv
+```
+6. Jika ingin mengaktifkan fitur "Login with Google" Tambahkan script di bagian bawah file .env
 ```sh
 GOOGLE_CLIENT_ID="xxx"
 GOOGLE_CLIENT_SECRET="xxx"
 GOOGLE_CALLBACK="http://127.0.0.1:8000/auth/callback"
 ```
+
 ## Fitur
 - Login, Register, Logout
 - CRUD Task
 - Dashboard 
 - Login with Google
+
+## Alat, Template 
+| Plugin | README |
+| ------ | ------ |
+| Laragon | [ ] |
+| Composer | [ ] |
+| Laravel | [ ] |
+| Modernize |https://themewagon.com/themes/modernize/ |
+| Sb Admin 2 | [https://startbootstrap.com/theme/sb-admin-2] |
+| Google Cloud | [https://console.cloud.google.com/apis] |
 
 ## Informasi Tambahan 
 Project ini menggunakan laravel versi 10 jadi pastikan PHP yang terinstal di device adalah php versi 8.1 atau lebih baru. Jika kalian sebelumnya menggunakan PHP versi 8.0 lebih randah, silahkan update composer dan jika belum bisa silahkan update laravel device versi PHP 8.1 https://www.php.net/downloads
