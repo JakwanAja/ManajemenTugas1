@@ -14,12 +14,9 @@ Kebutuhan
 - b
   
 Cara Menjalankan 
-- Clone projek ini dengan git bash git clone (-)
-- Konfigurasi nama database di .env sesuai database yang ada (disini saya menggunakan database "task")
-- Jalankan Migrasi dan seed
-  ```sh
-cd dillinger
-npm i
-node app
-```
+1. Clone projek ini dengan git bash git clone (-)
+2. Konfigurasi nama database di .env sesuai database yang ada (disini saya menggunakan database "task")
+3. Jalankan Migrasi dan seed
+  ```php artisan migrate:fresh --seed```
+4. 
 
