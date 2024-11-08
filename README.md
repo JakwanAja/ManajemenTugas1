@@ -6,7 +6,6 @@ Login default :
 - Email : admin1@gmail.com
 - Password : 12345678
 
-  
 ## Instalasi 
 Kebutuhan
 - PHP 8.1 atau diatasnya
@@ -45,9 +44,9 @@ GOOGLE_CALLBACK="http://127.0.0.1:8000/auth/callback"
 ## Alat, Template 
 | Plugin | README |
 | ------ | ------ |
-| Laragon | [ ] |
-| Composer | [ ] |
-| Laravel | [ ] |
+| Laragon | [https://laragon.org/download/] |
+| Composer | [https://getcomposer.org/download/] |
+| Laravel | [https://laravel.com/docs/11.x/installation] |
 | Modernize |https://themewagon.com/themes/modernize/ |
 | Sb Admin 2 | [https://startbootstrap.com/theme/sb-admin-2] |
 | Google Cloud | [https://console.cloud.google.com/apis] |
