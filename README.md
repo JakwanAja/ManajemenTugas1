@@ -5,6 +5,8 @@ Aplikasi ini merupakan aplikasi Manajemen Tugas (Task Manager) yang dibuat denga
 Login default : 
 - Email : admin1@gmail.com
 - Password : 12345678
+- 
+[![N|Solid](https://laravel.com/docs/11.x)
 
 ## Instalasi 
 Project ini menggunakan laravel versi 10 jadi pastikan PHP yang terinstal di device adalah php versi 8.1 atau lebih baru. Jika kalian sebelumnya menggunakan PHP versi 8.0 lebih randah, silahkan update composer dan jika belum bisa silahkan update laravel device versi PHP 8.1 https://www.php.net/downloads
