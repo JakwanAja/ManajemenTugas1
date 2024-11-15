@@ -5,8 +5,6 @@ Aplikasi ini merupakan aplikasi Manajemen Tugas (Task Manager) berbasis web yang
 Login default : 
 - Email : admin1@gmail.com
 - Password : 12345678
-Atau :
-- login with google
 
 ## Instalasi 
 Kebutuhan
