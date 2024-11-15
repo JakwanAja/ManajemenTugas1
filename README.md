@@ -5,6 +5,8 @@ Aplikasi ini merupakan aplikasi Manajemen Tugas (Task Manager) berbasis web yang
 Login default : 
 - Email : admin1@gmail.com
 - Password : 12345678
+Atau :
+- login with google
 
 ## Instalasi 
 Kebutuhan
@@ -38,6 +40,7 @@ GOOGLE_CALLBACK="http://127.0.0.1:8000/auth/callback"
 ## Fitur
 - Login, Register, Logout
 - CRUD Task
+- CRUD Kategori
 - Dashboard 
 - Login with Google
 
