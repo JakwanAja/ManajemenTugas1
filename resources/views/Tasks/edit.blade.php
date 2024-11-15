@@ -17,7 +17,7 @@
     <form action="{{ route('tasks.update', $task->id) }}" method="POST">
         @csrf
         @method('PUT')
-        
+
         <div class="form-group">
             <label for="title">Judul:</label>
             <input type="text" name="title" class="form-control" id="title" value="{{ $task->title }}" required>
@@ -34,6 +34,17 @@
                 <option value="pending" {{ $task->status == 'pending' ? 'selected' : '' }}>Pending</option>
                 <option value="in_progress" {{ $task->status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
                 <option value="completed" {{ $task->status == 'completed' ? 'selected' : '' }}>Completed</option>
+            </select>
+        </div>
+
+        <!-- Dropdown Kategori -->
+        <div class="form-group">
+            <label for="category_id">Kategori:</label>
+            <select name="category_id" id="category_id" class="form-control" required>
+                <option value="">Pilih Kategori</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}" {{ $task->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                @endforeach
             </select>
         </div>
 

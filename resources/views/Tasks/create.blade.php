@@ -34,7 +34,17 @@
                 <option value="completed">Completed</option>
             </select>
         </div>
-
+             <!-- Tambahkan dropdown kategori -->
+        <div class="form-group">
+            <label for="category_id">Kategori:</label>
+            <select name="category_id" id="category_id" class="form-control" required>
+                <option value="">Pilih Kategori</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        
         <div class="form-group">
             <label for="due_date">Jatuh Tempo:</label>
             <input type="date" name="due_date" class="form-control" id="due_date" required>

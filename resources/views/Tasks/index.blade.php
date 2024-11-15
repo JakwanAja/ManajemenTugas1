@@ -6,8 +6,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card shadow-sm border-0">
-                        <div class="card-header text-black">
-                            <h2 class="mb-0">Selamat Datang di Aplikasi Manajemen Tugas</h2>
+                        <div class="card-header">
+                            <h2 class="mb-0">Data Tugas</h2>
                         </div>
 
                         <div class="card-body">

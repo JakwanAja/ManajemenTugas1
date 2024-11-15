@@ -21,13 +21,14 @@
     <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="/pasien" class="text-nowrap logo-img">
-            <H2>Task Manager</H2>
-          </a>
-          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-            <i class="ti ti-x fs-8"></i>
-          </div>
+      <div class="brand-logo d-flex align-items-center justify-content-between">
+            <a href="/pasien" class="text-nowrap logo-img">
+              <!-- Menampilkan logo gambar -->
+              <img src="{{ asset('modern/src/assets/images/logos/task.jpg') }}" alt="Task Manager Logo" style="height: 85px;">
+            </a>
+            <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+              <i class="ti ti-x fs-8"></i>
+            </div>
         </div>
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
@@ -51,10 +52,16 @@
                 </span>
                 <span class="hide-menu">Data Tugas</span>
               </a>
+              <a class="sidebar-link {{ request()->is('categories') ? 'active' : '' }}" href="/categories" aria-expanded="false">
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Data Kategori</span>
+              </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" 
-                href="#" aria-expanded="false">
+                href="/gaenek" aria-expanded="false">
                 <span>
                   <i class="ti ti-file-description"></i>
                 </span>

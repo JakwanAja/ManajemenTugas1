@@ -28,5 +28,9 @@ class Task extends Model
     return $this->belongsTo(Category::class);
     }
 
-    
+    public function scopeOverdue($query)
+    {
+    return $query->where('due_date', '<', now())->where('status', '!=', 'completed');
+    }
+
 }

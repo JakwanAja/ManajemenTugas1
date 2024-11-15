@@ -9,6 +9,7 @@
             <div class="card-body">
                 <h3 class="card-title">{{ $task->title }}</h3>
                 <p class="card-text"><strong>Deskripsi: </strong>{{ $task->description }}</p>
+                <p class="card-text"><strong>Kategori: </strong>{{ $task->category->name ?? 'Tidak ada kategori' }}</p>
                 <p class="card-text"><strong>Status: </strong>{{ $task->status }}</p>
                 <p class="card-text"><strong>Tanggal Jatuh Tempo: </strong>{{ $task->due_date }}</p>
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GoogleController;
 
 // Redirect ke halaman login jika mengakses root ('/')
@@ -16,12 +17,17 @@ Route::get('/home', function () {
 })->middleware('auth');
 
 
+Route::resource('categories', CategoryController::class);
+
 // Route untuk tasks, dengan middleware auth
 Route::middleware(['auth'])->group(function () {
     Route::resource('tasks', TaskController::class);
     Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
     Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
 
+    Route::resource('categories', CategoryController::class);
+
+    
     // Contoh akses ke profil user
     Route::get('/user/{id}', function ($id) {
         return "Profil pengguna dengan ID: " . $id;
@@ -50,3 +56,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
